@@ -21,6 +21,5 @@ runs:
   args:
     - "cd ${{ inputs.workspace_dir }}"
     - yarn install --ignore-scripts
-    - yarn add ts-mocha
     - "solana-keygen new --no-bip39-passphrase"
     - "anchor test ${{ inputs.args }}"
