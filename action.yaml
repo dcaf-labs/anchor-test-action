@@ -1,25 +1,26 @@
-name: 'Solana Anchor Test'
-author: 'MRGN Labs'
-description: 'Run anchor tests'
+# Reference: https://github.com/mrgnlabs/anchor-test-action/blob/main/action.yaml
+name: "Solana Anchor Test"
+author: "Seabed Labs"
+description: "Run anchor tests"
 branding:
   icon: anchor
   color: blue
 inputs:
   args:
-    description: 'anchor test arguments'
+    description: "anchor test arguments"
     required: false
-    default: ''
+    default: ""
   workspace_dir:
-    description: 'anchor workspace directory'
+    description: "anchor workspace directory"
     required: false
-    default: '.'
+    default: "."
 runs:
-  using: 'docker'
-  image: 'docker://mrgnlabs/solana-dev:0.0.2-alpha'
+  using: "docker"
+  image: "docker://seabedlabs/solana-dev-env:rust-v1.65_solana-v1.16.13_anchor-v0.28.0_node-v18"
   entrypoint: shell-exec
   args:
-    - 'cd ${{ inputs.workspace_dir }}'
+    - "cd ${{ inputs.workspace_dir }}"
     - yarn
     - yarn add ts-mocha
-    - 'solana-keygen new --no-bip39-passphrase'
-    - 'anchor test ${{ inputs.args }}'
+    - "solana-keygen new --no-bip39-passphrase"
+    - "anchor test ${{ inputs.args }}"
