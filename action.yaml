@@ -1,5 +1,5 @@
 # Reference: https://github.com/mrgnlabs/anchor-test-action/blob/main/action.yaml
-name: "Solana Anchor Test"
+name: "Run Anchor Test for Solana Programs"
 author: "Seabed Labs"
 description: "Run anchor tests"
 branding:
