@@ -20,6 +20,7 @@ runs:
   entrypoint: shell-exec
   args:
     - "cd ${{ inputs.workspace_dir }}"
+    - "git config --global --add safe.directory ${{ inputs.workspace_dir }}"
     - yarn
     - yarn add ts-mocha
     - "solana-keygen new --no-bip39-passphrase"
