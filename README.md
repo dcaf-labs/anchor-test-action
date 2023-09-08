@@ -18,7 +18,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Solana Anchor Test
-        uses: dcaf-labs/anchor-test-action@mai
+        uses: dcaf-labs/anchor-test-action@main
         with:
           args: "" # add anchor test args, e.g. "--skip-lint"
           workspace_dir: "." # path to the anchor workspace, e.g. "./my_workspace"
