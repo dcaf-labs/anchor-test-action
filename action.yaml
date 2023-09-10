@@ -22,4 +22,7 @@ runs:
     - "cd ${{ inputs.workspace_dir }}"
     - yarn
     - "solana-keygen new --no-bip39-passphrase"
+    - "cargo lint:clippy"
+    - "cargo lint:fmt"
+    - "yarn lint"
     - "anchor test ${{ inputs.args }}"
