@@ -16,7 +16,7 @@ inputs:
     default: "."
 runs:
   using: "docker"
-  image: "docker://seabedlabs/solana-dev-env:rust-v1.65_solana-v1.16.13_anchor-v0.28.0_node-v18"
+  image: "docker://seabedlabs/solana-dev-env:rust-v1.72.0-v1.16.13_anchor-v0.28.0_node-v18.17.1"
   entrypoint: shell-exec
   args:
     - "cd ${{ inputs.workspace_dir }}"
