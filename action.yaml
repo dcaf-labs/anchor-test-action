@@ -20,6 +20,6 @@ runs:
   entrypoint: shell-exec
   args:
     - "cd ${{ inputs.workspace_dir }}"
-    - yarn install --ignore-scripts
+    - yarn
     - "solana-keygen new --no-bip39-passphrase"
     - "anchor test ${{ inputs.args }}"
