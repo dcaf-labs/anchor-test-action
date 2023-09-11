@@ -1,17 +1,17 @@
 # Reference: https://github.com/mrgnlabs/anchor-test-action/blob/main/action.yaml
-name: "Run Anchor Test for Solana Programs"
+name: "Solana Anchor Dev Env"
 author: "Seabed Labs"
-description: "Run anchor tests"
+description: "Run anything inside a solana dev env with anchor"
 branding:
   icon: anchor
   color: blue
 inputs:
-  args:
-    description: "anchor test arguments"
-    required: false
-    default: ""
+  command:
+    description: "any command that works in your repo"
+    required: true
+    default: "anchor test"
   workspace_dir:
-    description: "anchor workspace directory"
+    description: "workspace directory"
     required: false
     default: "."
 runs:
@@ -22,4 +22,4 @@ runs:
     - "cd ${{ inputs.workspace_dir }}"
     - "yarn install"
     - "solana-keygen new --no-bip39-passphrase"
-    - "anchor test ${{ inputs.args }}"
+    - "${{ inputs.command }}"
